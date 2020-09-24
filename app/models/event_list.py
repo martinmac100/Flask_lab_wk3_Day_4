@@ -5,3 +5,5 @@ event2 = Event("31.10.2020", "Halloween", 40, "Scary Room", "Fright Night")
 
 events = [event1, event2]
 
+def add_new_event(event):
+    events.append(event)

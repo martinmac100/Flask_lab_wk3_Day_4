@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>{{title}} - Event Planner</title>
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a> </li>
+            </ul>
+        </nav>
+        <h1>My event planner</h1>
+        <ul>
+            {% for event in events %}
+            <li>
+            <p>   {{event.name}} party on {{event.date}}: <br>{{event.description}} </p> 
+            </li>
+            {% endfor %}
+        </ul>
+    <p>Create your event:</p>
+    <form action="/add-event" method="POST">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name">
+        <br>
+        <label for="date">When is your event:</label>
+        <input type="date" name="date" id="date"> 
+        <br>
+        <label for="num_guests">Number of guests:</label>
+        <input type="number" step="1" name="num_guests" id="num_guests"> 
+        <br>
+        <label for="room">Name of room:</label>
+        <input type="text" name="room" id="room" > 
+        <br>
+        <label for="description">Description of event: </label>
+        <textarea name="description" id="description" cols="30" rows="2"></textarea>
+    ​
+        <input type="submit" value="Create Event">
+    </form>
+
+    </body>
+</html>
